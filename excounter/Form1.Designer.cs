@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.checkedListBoxColumns = new System.Windows.Forms.CheckedListBox();
+            this.buttonSearchCalculate = new System.Windows.Forms.Button();
+            this.textBoxOutputs = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // checkedListBox1
+            // checkedListBoxColumns
             // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
+            this.checkedListBoxColumns.FormattingEnabled = true;
+            this.checkedListBoxColumns.Items.AddRange(new object[] {
             "A",
             "B",
             "C",
@@ -65,29 +65,31 @@
             "X",
             "Y",
             "Z"});
-            this.checkedListBox1.Location = new System.Drawing.Point(12, 28);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(85, 394);
-            this.checkedListBox1.TabIndex = 0;
+            this.checkedListBoxColumns.Location = new System.Drawing.Point(12, 28);
+            this.checkedListBoxColumns.Name = "checkedListBoxColumns";
+            this.checkedListBoxColumns.Size = new System.Drawing.Size(85, 394);
+            this.checkedListBoxColumns.TabIndex = 0;
             // 
-            // button1
+            // buttonSearchCalculate
             // 
-            this.button1.Location = new System.Drawing.Point(103, 399);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(339, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Search and Calculate";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonSearchCalculate.Location = new System.Drawing.Point(103, 399);
+            this.buttonSearchCalculate.Name = "buttonSearchCalculate";
+            this.buttonSearchCalculate.Size = new System.Drawing.Size(339, 23);
+            this.buttonSearchCalculate.TabIndex = 1;
+            this.buttonSearchCalculate.Text = "Search and Calculate";
+            this.buttonSearchCalculate.UseVisualStyleBackColor = true;
+            this.buttonSearchCalculate.Click += new System.EventHandler(this.buttonSearchCalculate_Click);
             // 
-            // textBox1
+            // textBoxOutputs
             // 
-            this.textBox1.Location = new System.Drawing.Point(103, 12);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(339, 381);
-            this.textBox1.TabIndex = 2;
+            this.textBoxOutputs.Location = new System.Drawing.Point(103, 12);
+            this.textBoxOutputs.Multiline = true;
+            this.textBoxOutputs.Name = "textBoxOutputs";
+            this.textBoxOutputs.ReadOnly = true;
+            this.textBoxOutputs.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxOutputs.Size = new System.Drawing.Size(339, 381);
+            this.textBoxOutputs.TabIndex = 2;
+            this.textBoxOutputs.TextChanged += new System.EventHandler(this.textBoxOutputs_TextChanged);
             // 
             // label1
             // 
@@ -104,15 +106,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(454, 431);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.checkedListBox1);
+            this.Controls.Add(this.textBoxOutputs);
+            this.Controls.Add(this.buttonSearchCalculate);
+            this.Controls.Add(this.checkedListBoxColumns);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "Excel character counter by Neo";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -120,9 +123,9 @@
 
         #endregion
 
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.CheckedListBox checkedListBoxColumns;
+        private System.Windows.Forms.Button buttonSearchCalculate;
+        private System.Windows.Forms.TextBox textBoxOutputs;
         private System.Windows.Forms.Label label1;
     }
 }
